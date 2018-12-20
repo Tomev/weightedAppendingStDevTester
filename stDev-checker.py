@@ -23,7 +23,7 @@ class WeightedStandardDeviationCounter:
             return
 
         self.m = self.m * weight_modifier + 1
-        self.squared_samples_sum = self.squared_samples_sum * (weight_modifier ** 2) + new_sample ** 2
+        self.squared_samples_sum = self.squared_samples_sum * weight_modifier + new_sample ** 2
         self.sample_sum = self.sample_sum * weight_modifier + new_sample
         self.st_dev = self.squared_samples_sum / (self.m - 1)
         self.st_dev -= (self.sample_sum ** 2) / (self.m * (self.m - 1))
