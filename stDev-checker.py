@@ -33,8 +33,8 @@ class WeightedStandardDeviationCounter:
 
 sigma = 1
 mean = 0
-sample_size = 10000
-b = 0.5
+sample_size = 2000
+b = 1
 
 seed = 1
 
@@ -48,4 +48,7 @@ wsdc = WeightedStandardDeviationCounter()
 
 for i in range(0, sample_size):
     wsdc.update_standard_deviation(b, s[i])
-    f.write(str(wsdc.st_dev) + ",")
+    if i == sample_size - 1:
+        f.write(str(wsdc.st_dev))
+    else:
+        f.write(str(wsdc.st_dev) + ",")
