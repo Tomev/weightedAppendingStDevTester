@@ -34,14 +34,14 @@ class WeightedStandardDeviationCounter:
 sigma = 1
 mean = 0
 sample_size = 2000
-b = 1
+b = 0.99
 
 seed = 1
 
 np.random.seed(seed)
 
 
-f = open(str(b) + ".csv", "w+")
+f = open(str(b) + ", " + str(sample_size) + ".csv", "w+")
 
 s = np.random.normal(mean, sigma, sample_size)
 wsdc = WeightedStandardDeviationCounter()
